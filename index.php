@@ -71,6 +71,8 @@ echo "Suma de totes = " . $X + $Y + $N + $M . "<br>";
 
 echo "Producte de totes = " . $X * $Y * $N * $M . "<br>";
 
+//Exercici 3.B
+
 
 
 
@@ -79,6 +81,8 @@ echo "Producte de totes = " . $X * $Y * $N * $M . "<br>";
 <!DOCTYPE html>
 <html>
 <body>
+
+echo "<h1>" . APELLIDO . "</h1>";
 
 </body>
 </html>
