@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Dom\Notation;
 
-//Exercici 1
+//Exercise 1
 
 $name = "Isma";
 
@@ -24,7 +24,7 @@ echo "Apellido: " . APELLIDO . "<br>";
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
 
-//Exercici 2
+//Exercise 2
 
 $saludar = "Hello, World!";
 
@@ -42,7 +42,7 @@ echo $especializacion . " " . $saludar . "<br>";
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
 
-//Exercici 3
+//Exercise 3
 
 $X = 4;
 $Y = 7;
@@ -81,11 +81,8 @@ echo "Producte de totes = " . $X * $Y * $N * $M . "<br>";
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
 
-//Exercici 3.B
 
-
-
-
+//Exercise 3.B
 
 function calculate(int $a, int $b, string $operation) {
 
@@ -116,20 +113,27 @@ function calculate(int $a, int $b, string $operation) {
         }
     }
 
-echo "Resultado 3.B = " . calculate(0, 8, "division"). "<br>";
+echo "Resultado 3.B: " . "<br>" . calculate(0, 8, "division") . "<br>";
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
-/*
-   count(int $c) {
-    for ($c = 0; $c <= 10; $c++) {
-        echo "The number is: $c <br>";
-        }
+
+
+//Exercise 4
+
+  function countUp (int $max = 10, int $jump = 1) {
+    for ($x = 0; $x <= $max; $x += $jump) {
+        echo $x . ", ";
+    }
     }
 
-echo "Resultado 4 = " . count(2). "<br>";
-*/
+echo "Resultado 4:<br>";
+countUp(20,3);
 
 
+echo "<br>" . "-------------" . "<br>" . "<br>";
+
+
+//Exercise 5
 
 function verify (int $nota) {
 
@@ -157,6 +161,22 @@ echo "Resultado 5 = " . verify(44) . "<br>";
 echo "Resultado 5 = " . verify(45) . "<br>";
 echo "Resultado 5 = " . verify(59) . "<br>";
 echo "Resultado 5 = " . verify(60) . "<br>";
+
+echo "<br>" . "-------------" . "<br>" . "<br>";
+
+//Exercise 6
+function isBitten() {
+$probability = rand(0, 1);
+if ($probability == 0) {
+    return false;
+}
+else {
+return true;
+}
+}
+
+echo "Resultado 6:<br>" . isBitten();
+
 
 ?>
 
