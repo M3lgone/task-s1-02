@@ -184,4 +184,3 @@ echo "Resultado 6:<br>" . isBitten();
 
 
 
-<h2><?= $output?></h2>
