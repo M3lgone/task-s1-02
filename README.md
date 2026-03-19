@@ -66,12 +66,12 @@ Advanced algorithm implementation (Sieve of Eratosthenes)
 
 ### Level 1
 
-* [ ] 1. Variables and constants
-* [ ] 2. String manipulation
-* [ ] 3. Arithmetic operations and function with parameters
-* [ ] 4. Counting function with default values
-* [ ] 5. Student grade evaluation
-* [ ] 6. Random boolean function (isBitten)
+* [x] 1. Variables and constants
+* [x] 2. String manipulation
+* [x] 3. Arithmetic operations and function with parameters
+* [x] 4. Counting function with default values
+* [x] 5. Student grade evaluation
+* [x] 6. Random boolean function (isBitten)
 
 ### Level 2
 
