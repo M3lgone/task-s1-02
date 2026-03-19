@@ -180,24 +180,23 @@ echo "Result exercise 6: <br>" . isBitten() . "<br>";
 echo "<br>" . "-------------" . "<br>" . "<br>";
 
 
-//Escriu una funció que determini la quantitat total a pagar per una trucada telefònica segons les següents premisses:
-
-//Tota trucada que duri menys de 3 minuts té un cost de 10 cèntims.
-//Cada minut addicional a partir dels 3 primers és un pas de comptador i costa 5 cèntims.
-
 //Exercise 1-level2
 
 function phonePay(int $minutes) {
-    $toPay = 0;
+    $price = 0;
             if ($minutes < 3) {
-                return $toPay = 0.10;
+                return $minutes * 0.10;
             }
                 else {
-                    return $toPay += 0.15;
+                    $base = 3 * 0.10;
+                    $extraMinutes = $minutes - 3;
+                    return $base + ($extraMinutes * 0.15);
                 }
             }
 
-echo "Result exercise 1-level-2 : " . phonePay(5);
+echo "Result exercise 1-level-2 : " . (float) phonePay(5) . "$";
+
+
 
 //Imagina que estàs programant part de la lògica de la classificació de punts d'un joc. En aquest programa necessitem entrar 3 puntuacions diferents(les puntuacions són entre 0 i 9999). D'aquestes puntuacions necessitarem:
 //La seva suma
@@ -206,10 +205,10 @@ echo "Result exercise 1-level-2 : " . phonePay(5);
 //Pensa a fer més d'una funció per resoldre aquest problema.
 //Exercise 2-level2
  
-function classification(int $punctuation1, int $punctuation2, int $punctuation3) {
-    if () {
+//function classification(int $score1, int $score2, int $score3) {
+//    if () {
         
-    }
+  //  }
 
 ?>
 
