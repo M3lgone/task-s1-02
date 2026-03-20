@@ -1,8 +1,8 @@
 <?php
 
 declare(strict_types=1);
-
-use Dom\Notation;
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 //Exercise 1
 
@@ -183,7 +183,6 @@ echo "<br>" . "-------------" . "<br>" . "<br>";
 //Exercise 1-level2
 
 function phonePay(int $minutes) {
-    $price = 0;
             if ($minutes < 3) {
                 return $minutes * 0.10;
             }
@@ -194,21 +193,51 @@ function phonePay(int $minutes) {
                 }
             }
 
-echo "Result exercise 1-level-2 : " . (float) phonePay(5) . "$";
+echo "Result exercise 1-level-2 : " . (float) phonePay(5) . "$ costs your call" . "<br>";
 
 
-
+echo "<br>" . "-------------" . "<br>" . "<br>";
 //Imagina que estàs programant part de la lògica de la classificació de punts d'un joc. En aquest programa necessitem entrar 3 puntuacions diferents(les puntuacions són entre 0 i 9999). D'aquestes puntuacions necessitarem:
 //La seva suma
 //La seva mitjana
 //La classificació. Sent "Principiant" menor de 4000. "Intermedi" menor de 8000 i "Professional" la resta.
 //Pensa a fer més d'una funció per resoldre aquest problema.
 //Exercise 2-level2
- 
-//function classification(int $score1, int $score2, int $score3) {
-//    if () {
-        
-  //  }
+
+function addUp(int $score1, int $score2, int $score3) {
+    if (($score1 >= 0 && $score1 <= 9999) && ($score2 >= 0 && $score2 <= 9999) && ($score3 >= 0 && $score3 <= 9999)) {
+        $sum = $score1 + $score2 + $score3;
+        return $sum;
+    }
+    else {
+    return false;
+    } 
+}
+
+function average(int $sum) {
+    $average = $sum / 3;
+    return $average;
+    }
+
+function classification(float $average) {
+    if ($average < 4000) {
+        return "You are Beginner :)";
+    }
+    elseif ($average < 8000) {
+        return "You are Amateur :D";
+    }
+    else {
+        return "You are Pro :O";
+    }
+}
+
+$sum = addUp(1000,3999,3999);
+if ($sum !== false) {
+    $average = average($sum);
+    echo classification($average);
+} else {
+    echo "Error: scores must be between 0 and 9999";
+}
 
 ?>
 
