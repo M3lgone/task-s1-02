@@ -1,8 +1,6 @@
 <?php
 
 declare(strict_types=1);
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 //Exercise 1
 
@@ -14,7 +12,7 @@ $price = 10.40;
 
 $soyJoven = true;
 
-const APELLIDO ='Gonzalez';
+define("APELLIDO", "Gonzalez");
 
 echo "Nombre: " . $name . "<br>";
 echo "Edad: " . $age . "<br>";
@@ -84,34 +82,29 @@ echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 3.B
 
-function calculate(int $a, int $b, string $operation) {
-
+function calculate(int $a, int $b, string $operation): float
+{
     switch ($operation) {
 
         case "suma":
             return $a + $b;
-            break;
 
         case "resta":
             return $a - $b;
-            break;
 
         case "multiplicacion":
             return $a * $b;
-            break;
 
         case "division":
             if ($b == 0) {
-            return "error";
+                throw new Exception("Error");
             }
-            else {
             return $a / $b;
-            break;
-            }
+
         default:
-            return "Invalid parameter";
-        }
+            throw new Exception("Invalid parameter");
     }
+}
 
 echo "Result exercise 3.B: " . "<br>" . calculate(0, 8, "division") . "<br>";
 
@@ -120,14 +113,15 @@ echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 4
 
-  function countUp (int $max = 10, int $jump = 1) {
+function countUp(int $max = 10, int $jump = 1)
+{
     for ($x = 0; $x <= $max; $x += $jump) {
         echo $x . ", ";
     }
-    }
+}
 
 echo "Result exercise 4:<br>";
-countUp(20,3);
+countUp(20, 3);
 
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
@@ -135,23 +129,18 @@ echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 5
 
-function verify (int $nota) {
+function verify(int $nota)
+{
 
-if ($nota < 33) {
-return "Reprove";
-}
-
-elseif ($nota >= 33 && $nota <= 44) {
-return "Third division";
-}
-
-else if ($nota >= 45 && $nota <= 59) {
-return "Second division";
-}
-
-else {
-return "First division";
-}
+    if ($nota < 33) {
+        return "Reprove :(";
+    } elseif ($nota <= 44) {
+        return "Third division :)";
+    } elseif ($nota <= 59) {
+        return "Second division :D";
+    } else {
+        return "First division :O";
+    }
 }
 
 
@@ -165,79 +154,73 @@ echo "Result test = " . verify(60) . "<br>";
 echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 6
-function isBitten() {
-$probability = rand(0, 1);
-if ($probability == 0) {
-    return false;
-}
-else {
-return true;
-}
+function isBitten()
+{
+    $probability = rand(0, 1);
+    if ($probability == 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 echo "Result exercise 6: <br>" . isBitten() . "<br>";
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
-
-
 //Exercise 1-level2
 
-function phonePay(int $minutes) {
-            if ($minutes < 3) {
-                return $minutes * 0.10;
-            }
-                else {
-                    $base = 3 * 0.10;
-                    $extraMinutes = $minutes - 3;
-                    return $base + ($extraMinutes * 0.15);
-                }
-            }
+function phonePay(int $minutes)
+{
+    if ($minutes < 3) {
+        return $minutes * 0.10;
+    } else {
+        $base = 3 * 0.10;
+        $extraMinutes = $minutes - 3;
+        return $base + ($extraMinutes * 0.15);
+    }
+}
 
 echo "Result exercise 1-level-2 : " . (float) phonePay(5) . "$ costs your call" . "<br>";
 
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
-//Imagina que estàs programant part de la lògica de la classificació de punts d'un joc. En aquest programa necessitem entrar 3 puntuacions diferents(les puntuacions són entre 0 i 9999). D'aquestes puntuacions necessitarem:
-//La seva suma
-//La seva mitjana
-//La classificació. Sent "Principiant" menor de 4000. "Intermedi" menor de 8000 i "Professional" la resta.
-//Pensa a fer més d'una funció per resoldre aquest problema.
-//Exercise 2-level2
 
-function addUp(int $score1, int $score2, int $score3) {
+function addUp(int $score1, int $score2, int $score3)
+{
     if (($score1 >= 0 && $score1 <= 9999) && ($score2 >= 0 && $score2 <= 9999) && ($score3 >= 0 && $score3 <= 9999)) {
         $sum = $score1 + $score2 + $score3;
         return $sum;
+    } else {
+        return false;
     }
-    else {
-    return false;
-    } 
 }
 
-function average(int $sum) {
+function average(int $sum)
+{
     $average = $sum / 3;
     return $average;
-    }
+}
 
-function classification(float $average) {
+function classification(float $average)
+{
     if ($average < 4000) {
         return "You are Beginner :)";
-    }
-    elseif ($average < 8000) {
+    } elseif ($average < 8000) {
         return "You are Amateur :D";
-    }
-    else {
+    } else {
         return "You are Pro :O";
     }
 }
 
-$sum = addUp(1000,3999,3999);
+$sum = addUp(7000, 8999, 9000);
 if ($sum !== false) {
     $average = average($sum);
     echo classification($average);
 } else {
     echo "Error: scores must be between 0 and 9999";
 }
+
+
 
 ?>
 

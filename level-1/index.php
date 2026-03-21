@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use Dom\Notation;
-
 //Exercise 1
 
 $name = "Isma";
@@ -14,7 +12,7 @@ $price = 10.40;
 
 $soyJoven = true;
 
-const APELLIDO ='Gonzalez';
+define("APELLIDO", "Gonzalez");
 
 echo "Nombre: " . $name . "<br>";
 echo "Edad: " . $age . "<br>";
@@ -84,34 +82,29 @@ echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 3.B
 
-function calculate(int $a, int $b, string $operation) {
-
+function calculate(int $a, int $b, string $operation): float
+{
     switch ($operation) {
 
         case "suma":
             return $a + $b;
-            break;
 
         case "resta":
             return $a - $b;
-            break;
 
         case "multiplicacion":
             return $a * $b;
-            break;
 
         case "division":
             if ($b == 0) {
-            return "error";
+                throw new Exception("Error");
             }
-            else {
             return $a / $b;
-            break;
-            }
+
         default:
-            return "Invalid parameter";
-        }
+            throw new Exception("Invalid parameter");
     }
+}
 
 echo "Result exercise 3.B: " . "<br>" . calculate(0, 8, "division") . "<br>";
 
@@ -120,14 +113,15 @@ echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 4
 
-  function countUp (int $max = 10, int $jump = 1) {
+function countUp(int $max = 10, int $jump = 1)
+{
     for ($x = 0; $x <= $max; $x += $jump) {
         echo $x . ", ";
     }
-    }
+}
 
 echo "Result exercise 4:<br>";
-countUp(20,3);
+countUp(20, 3);
 
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
@@ -135,23 +129,18 @@ echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 5
 
-function verify (int $nota) {
+function verify(int $nota)
+{
 
-if ($nota < 33) {
-return "Reprove";
-}
-
-elseif ($nota >= 33 && $nota <= 44) {
-return "Third division";
-}
-
-else if ($nota >= 45 && $nota <= 59) {
-return "Second division";
-}
-
-else {
-return "First division";
-}
+    if ($nota < 33) {
+        return "Reprove :(";
+    } elseif ($nota <= 44) {
+        return "Third division :)";
+    } elseif ($nota <= 59) {
+        return "Second division :D";
+    } else {
+        return "First division :O";
+    }
 }
 
 
@@ -165,14 +154,14 @@ echo "Result test = " . verify(60) . "<br>";
 echo "<br>" . "-------------" . "<br>" . "<br>";
 
 //Exercise 6
-function isBitten() {
-$probability = rand(0, 1);
-if ($probability == 0) {
-    return false;
-}
-else {
-return true;
-}
+function isBitten()
+{
+    $probability = rand(0, 1);
+    if ($probability == 0) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 echo "Result exercise 6: <br>" . isBitten() . "<br>";
