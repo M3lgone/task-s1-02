@@ -169,7 +169,7 @@ echo "Result exercise 6: <br>" . isBitten() . "<br>";
 echo "<br>" . "-------------" . "<br>" . "<br>";
 //Exercise 1-level2
 
-function phonePay(int $minutes)
+function phonePay(int $minutes): float
 {
     if ($minutes < 3) {
         return $minutes * 0.10;
@@ -180,22 +180,23 @@ function phonePay(int $minutes)
     }
 }
 
-echo "Result exercise 1-level-2 : " . (float) phonePay(5) . "$ costs your call" . "<br>";
+echo "Result exercise 1-level-2 : " . phonePay(5) . "$ costs your call" . "<br>";
 
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
 
+
 function addUp(int $score1, int $score2, int $score3)
 {
-    if (($score1 >= 0 && $score1 <= 9999) && ($score2 >= 0 && $score2 <= 9999) && ($score3 >= 0 && $score3 <= 9999)) {
+    if ($score1 >= 0 && $score1 <= 9999 && $score2 >= 0 && $score2 <= 9999 && $score3 >= 0 && $score3 <= 9999) {
         $sum = $score1 + $score2 + $score3;
         return $sum;
     } else {
-        return false;
+        throw new Exception("Error: scores must be between 0 and 9999");
     }
 }
 
-function average(int $sum)
+function average(int $sum): float
 {
     $average = $sum / 3;
     return $average;
@@ -217,7 +218,7 @@ if ($sum !== false) {
     $average = average($sum);
     echo classification($average);
 } else {
-    echo "Error: scores must be between 0 and 9999";
+    throw new Exception("Error: scores must be between 0 and 9999");
 }
 
 
