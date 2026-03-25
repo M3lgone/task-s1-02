@@ -31,18 +31,52 @@ Clone the repository:
 git clone https://github.com/M3lgone/task-s1-02.git
 ```
 
-Run the files using a local server (XAMPP, MAMP, etc.) or directly in your PHP environment.
+---
+
+## ▶️ How to Run
+
+Run each level independently using PHP's built-in server.
+
+### Example:
+
+```bash
+php -S localhost:8000 -t level-1
+```
+
+Then open:
+
+```
+http://localhost:8000
+```
+
+👉 Replace `level-1` with `level-2` or `level-3` depending on what you want to test.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── level-1/  
-├── level-2/  
-├── level-3/  
-├── index.php 
-├── README.md  
+├── level-1/
+│   ├── index.php
+│   ├── Exercise-1.php
+│   ├── Exercise-2.php
+│   ├── Exercise-3.php
+│   ├── Exercise-3B.php
+│   ├── Exercise-4.php
+│   ├── Exercise-5.php
+│   └── Exercise-6.php
+│
+├── level-2/
+│   ├── index.php
+│   ├── Exercise-1.php
+│   └── Exercise-2.php
+│
+├── level-3/
+│
+├── test/
+│   └── index.php
+│
+└── README.md
 ```
 
 ---
@@ -75,9 +109,21 @@ Advanced algorithm implementation (Sieve of Eratosthenes)
 
 ### Level 2
 
-* [ ] 1. Phone call cost calculation
-* [ ] 2. Game score system (sum, average, classification)
+* [x] 1. Phone call cost calculation
+* [x] 2. Game score system (sum, average, classification)
 
 ### Level 3
 
 * [ ] 1. Sieve of Eratosthenes implementation
+
+---
+
+## 🧪 Notes
+
+* Each level is structured as an independent mini-project.
+* Every level has its own `index.php` as an entry point.
+* Exercises are separated into individual files for better organization.
+* The `test/` folder is used as a sandbox for experimentation.
+
+---
+

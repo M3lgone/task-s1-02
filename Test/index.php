@@ -167,7 +167,8 @@ function isBitten()
 echo "Result exercise 6: <br>" . isBitten() . "<br>";
 
 echo "<br>" . "-------------" . "<br>" . "<br>";
-//Exercise 1-level2
+
+//Exercise 1
 
 function phonePay(int $minutes): float
 {
