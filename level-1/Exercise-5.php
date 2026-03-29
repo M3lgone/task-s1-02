@@ -8,7 +8,7 @@ function verify(int $nota)
 {
 
     if ($nota < 33) {
-        return "Reprove :(";
+        return "Suspended :(";
     } elseif ($nota <= 44) {
         return "Third division :)";
     } elseif ($nota <= 59) {
@@ -26,4 +26,4 @@ echo "Result test = " . verify(45) . "<br>";
 echo "Result test = " . verify(59) . "<br>";
 echo "Result test = " . verify(60) . "<br>";
 
-echo "<br>" . "-------------" . "<br>" . "<br>";
+echo "<hr>";

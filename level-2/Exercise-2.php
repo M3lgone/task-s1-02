@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function addUp(int $score1, int $score2, int $score3)
+function addUp(int $score1, int $score2, int $score3): int
 {
     if ($score1 >= 0 && $score1 <= 9999 && $score2 >= 0 && $score2 <= 9999 && $score3 >= 0 && $score3 <= 9999) {
         $sum = $score1 + $score2 + $score3;
@@ -18,7 +18,7 @@ function average(int $sum): float
     return $average;
 }
 
-function classification(float $average)
+function classification(float $average): string
 {
     if ($average < 4000) {
         return "You are Beginner :)";

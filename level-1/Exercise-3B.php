@@ -18,8 +18,8 @@ function calculate(int $a, int $b, string $operation): float
             return $a * $b;
 
         case "division":
-            if ($b == 0) {
-                throw new Exception("Error");
+            if ($b === 0) {
+                throw new InvalidArgumentException("Division by zero");
             }
             return $a / $b;
 

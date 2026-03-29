@@ -18,4 +18,4 @@ function phonePay(int $minutes): float
 echo "Result exercise 1-level-2 : " . phonePay(5) . "$ costs your call" . "<br>";
 
 
-echo "<br>" . "-------------" . "<br>" . "<br>";
+echo "<hr>";
